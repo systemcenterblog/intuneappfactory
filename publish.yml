@@ -34,13 +34,6 @@ variables:
 - group: IntuneAppFactory-Config
 - group: KeyVault
 
-Steps:
-- script: |
-    echo "TenantId: $(TenantId)"
-    echo "ClientId: $(ClientId)"
-  displayName: "Debug variables (non-secret)"
-
-
 # Stage: 1
 # - Description: Test environment for required files
 # - Input file required: None 
@@ -51,6 +44,13 @@ stages:
   - job: test_environment
     timeoutInMinutes: 5
     steps:
+
+    # 👉 Your debug step belongs HERE inside the job
+    - script: |
+        echo "TenantId: $(TenantId)"
+        echo "ClientId: $(ClientId)"
+      displayName: "Debug variables (non-secret)"
+
     - task: PowerShell@2
       name: write_variables
       displayName: Write-Variable
