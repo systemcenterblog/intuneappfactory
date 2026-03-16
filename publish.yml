@@ -34,6 +34,13 @@ variables:
 - group: IntuneAppFactory-Config
 - group: KeyVault
 
+Steps:
+- script: |
+    echo "TenantId: $(TenantId)"
+    echo "ClientId: $(ClientId)"
+  displayName: "Debug variables (non-secret)"
+
+
 # Stage: 1
 # - Description: Test environment for required files
 # - Input file required: None 
