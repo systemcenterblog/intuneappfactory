@@ -11,7 +11,7 @@ schedules:
   always: true
 
 pool:
-  vmImage: 'windows-latest'
+   name: 'IntuneAppFactory'
 
 parameters:
   - name: operationalMode
