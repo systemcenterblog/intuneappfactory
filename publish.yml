@@ -31,7 +31,7 @@ parameters:
     - 'No'
 
 variables:
-- group: IntuneAppFactory
+- group: IntuneAppFactory-Config
 - group: KeyVault
 
 # Stage: 1
