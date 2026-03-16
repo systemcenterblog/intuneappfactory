@@ -32,7 +32,7 @@ parameters:
 
 variables:
 - group: IntuneAppFactory-Config
-- group: KeyVault
+#- group: KeyVault
 
 # Stage: 1
 # - Description: Test environment for required files
