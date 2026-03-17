@@ -44,13 +44,6 @@ stages:
   - job: test_environment
     timeoutInMinutes: 5
     steps:
-
-    # 👉 Your debug step belongs HERE inside the job
-    - script: |
-        echo "TenantID: $(TenantID)"
-        echo "ClientID: $(ClientID)"
-      displayName: "Debug variables (non-secret)"
-
     - task: PowerShell@2
       name: write_variables
       displayName: Write-Variable
