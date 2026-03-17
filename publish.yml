@@ -127,6 +127,12 @@ stages:
         downloadType: 'single'
         artifactName: AppsProcessList
         downloadPath: '$(Build.ArtifactStagingDirectory)'
+    - pwsh: |
+        Write-Host "TenantID:  '$(TenantID)'"
+        Write-Host "ClientID:  '$(ClientID)'"
+        Write-Host "Secret?   $(if('$(SP-IntuneAppFactory-ClientSecret)'){ 'Yes' } else { 'NO - EMPTY' })"
+      displayName: "DEBUG Intune Auth Variables"
+      
     - task: PowerShell@2
       name: test_app_list
       displayName: Test-AppList
