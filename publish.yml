@@ -127,7 +127,7 @@ stages:
         downloadType: 'single'
         artifactName: AppsProcessList
         downloadPath: '$(Build.ArtifactStagingDirectory)'
-    - pwsh: |
+    - powershell: |
         Write-Host "TenantID:  '$(TenantID)'"
         Write-Host "ClientID:  '$(ClientID)'"
         Write-Host "Secret?   $(if('$(SP-IntuneAppFactory-ClientSecret)'){ 'Yes' } else { 'NO - EMPTY' })"
