@@ -47,8 +47,8 @@ stages:
 
     # 👉 Your debug step belongs HERE inside the job
     - script: |
-        echo "TenantId: $(TenantId)"
-        echo "ClientId: $(ClientId)"
+        echo "TenantID: $(TenantID)"
+        echo "ClientID: $(ClientID)"
       displayName: "Debug variables (non-secret)"
 
     - task: PowerShell@2
