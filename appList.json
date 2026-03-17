@@ -1,7 +1,7 @@
 {
     "Apps": [
         {
-            "IntuneAppName": "7-Zip",
+            "IntuneAppName": "7zip",
             "IntuneAppNamingConvention": "PublisherAppNameAppVersion",
             "AppPublisher": "Igor Pavlov",
             "AppSource": "Evergreen",
@@ -15,7 +15,7 @@
             ]
         },
         {
-            "IntuneAppName": "Notepad++",
+            "IntuneAppName": "NotepadPlusPlus",
             "IntuneAppNamingConvention": "AppName",
             "AppPublisher": "Don Ho",
             "AppSource": "Evergreen",
@@ -29,12 +29,12 @@
             ]
         },
         {
-            "IntuneAppName": "VLC",
+            "IntuneAppName": "VideoLanVlcPlayer",
             "IntuneAppNamingConvention": "AppNameAndVersion",
             "AppPublisher": "VideoLAN",
             "AppSource": "Evergreen",
             "AppID": "VideoLanVlcPlayer",
-            "AppFolderName": "VLC",
+            "AppFolderName": "VideoLanVlcPlayer",
             "FilterOptions": [
                 {
                     "Architecture": "x64",
