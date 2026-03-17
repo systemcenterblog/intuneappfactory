@@ -34,7 +34,7 @@ Process {
                 if ($LatestModuleItemVersion -ne $null) {
                     if ($LatestModuleItemVersion -gt $ModuleItem.Version) {
                         Write-Output -InputObject "Latest version of $($Module) module is not installed, attempting to install: $($LatestModuleItemVersion.ToString())"
-                        $UpdateModuleInvocation = Update-Module -Name $Module -Force -ErrorAction "Stop" -Confirm:$false -Verbose:$false
+                        $UpdateModuleInvocation = Update-Module -Name $Module -Force -Scope CurrentUser -ErrorAction "Stop" -Confirm:$false -Verbose:$false
                     }
                     else {
                         Write-Output -InputObject "Latest version of $($Module) is already installed: $($ModuleItem.Version.ToString())"
