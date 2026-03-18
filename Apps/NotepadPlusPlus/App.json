@@ -42,19 +42,19 @@
     "Assignment": [
         {
             "Type": "VirtualGroup",
-            "GroupName": "AllDevices",
-            "Intent": "available",
-            "Notification": "showAll",
-            "UseLocalTime": true,
-            "FilterName": "",
-            "FilterMode": "",
-            "AvailableTime": "",
-            "DeadlineTime": "",
-            "DeliveryOptimizationPriority": "",
-            "EnableRestartGracePeriod": "",
-            "RestartGracePeriodInMinutes": "",
-            "RestartCountDownDisplayInMinutes": "",
-            "RestartNotificationSnoozeInMinutes": ""
+    "GroupName": "AllDevices",
+    "Intent": "available",
+    "Notification": "showAll",
+    "UseLocalTime": false, 
+    "AvailableTime": null,
+    "DeadlineTime": null,
+    "FilterName": "",
+    "FilterMode": "",
+    "DeliveryOptimizationPriority": null,
+    "EnableRestartGracePeriod": false,
+    "RestartGracePeriodInMinutes": null,
+    "RestartCountDownDisplayInMinutes": null,
+    "RestartNotificationSnoozeInMinutes": null
         }
     ]
 }
