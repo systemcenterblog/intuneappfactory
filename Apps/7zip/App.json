@@ -13,51 +13,26 @@
         "Description": "Install 7-Zip",
         "Publisher": "<replaced_by_pipeline>",
         "Notes": "",
-        "Owner": "",
-        "ScopeTagName": ""
+       "Owner": "Intune AppFactory"
     },
     "Program": {
-        "InstallCommand": "Deploy-Application.exe Install",
-        "UninstallCommand": "Deploy-Application.exe Uninstall",
+        "InstallCommand": "Deploy-Application.exe -DeploymentType \"Install\" -DeployMode \"Silent\"",
+        "UninstallCommand": "Deploy-Application.exe -DeploymentType \"Uninstall\" -DeployMode \"Silent\"",
         "InstallExperience": "system",
         "DeviceRestartBehavior": "suppress"
     },
     "RequirementRule": {
-        "MinimumSupportedWindowsRelease": "W10_22H2",
+        "MinimumSupportedWindowsRelease": "W10_21H2",
         "Architecture": "x64"
     },
     "CustomRequirementRule": [
     ],
     "DetectionRule": [
         {
-            "Type": "Registry",
-            "DetectionMethod": "VersionComparison",
-            "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\###PRODUCTCODE###",
-            "ValueName": "DisplayVersion",
-            "Operator": "greaterThanOrEqual",
-            "Value": "<replaced_by_pipeline>",
-            "Check32BitOn64System": "false"
-        }
-    ],
-    "Assignment": [
-        {
-            
-"Type": "VirtualGroup",
-    "GroupName": "AllDevices",
-    "Intent": "available",
-    "Notification": "showAll",
-    "UseLocalTime": false, 
-    "AvailableTime": null,
-    "DeadlineTime": null,
-    "FilterName": "",
-    "FilterMode": "",
-    "DeliveryOptimizationPriority": null,
-    "EnableRestartGracePeriod": false,
-    "RestartGracePeriodInMinutes": null,
-    "RestartCountDownDisplayInMinutes": null,
-    "RestartNotificationSnoozeInMinutes": null
-
-            
+            "Type": "MSI",
+            "ProductCode": "<replaced_by_pipeline>",
+            "ProductVersionOperator": "notConfigured",
+            "ProductVersion": "<replaced_by_pipeline>"
         }
     ]
 }
