@@ -569,8 +569,8 @@ Process {
 
             # Construct a table of default parameters for Win32 app
             $Win32AppArgs = @{
-                #"FilePath" = $IntuneAppPackage.Path
-                "FilePath" = (Join-Path -Path $OutputFolder -ChildPath $IntuneAppPackage.FileName)
+                "FilePath" = $IntuneAppPackage.Path
+                #"FilePath" = (Join-Path -Path $OutputFolder -ChildPath $IntuneAppPackage.FileName)
                 "DisplayName" = $DisplayName
                 "AppVersion" = $AppData.Information.AppVersion
                 "Description" = $AppData.Information.Description
@@ -581,7 +581,7 @@ Process {
                 "RequirementRule" = $RequirementRule
                 "ErrorAction" = "Stop"
             }
-
+           
             # Dynamically add additional parameters for Win32 app
             if ($RequirementRules -ne $null) {
                 $Win32AppArgs.Add("AdditionalRequirementRule", $RequirementRules)
