@@ -569,7 +569,8 @@ Process {
 
             # Construct a table of default parameters for Win32 app
             $Win32AppArgs = @{
-                "FilePath" = $IntuneAppPackage.Path
+                #"FilePath" = $IntuneAppPackage.Path
+                "FilePath" = (Join-Path -Path $OutputFolder -ChildPath $IntuneAppPackage.FileName)
                 "DisplayName" = $DisplayName
                 "AppVersion" = $AppData.Information.AppVersion
                 "Description" = $AppData.Information.Description
