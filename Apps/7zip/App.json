@@ -48,13 +48,7 @@
             "UseLocalTime": false,
             "FilterName": "",
             "FilterMode": "",
-            "AvailableTime": "",
-            "DeadlineTime": "",
-            "DeliveryOptimizationPriority": "",
-            "EnableRestartGracePeriod": "",
-            "RestartGracePeriodInMinutes": "",
-            "RestartCountDownDisplayInMinutes": "",
-            "RestartNotificationSnoozeInMinutes": ""
+            
         }
     ]
 }
