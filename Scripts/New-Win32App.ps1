@@ -614,25 +614,25 @@ if (-not (Test-Path $IntuneAppPackage.Path)) {
                 $Win32AppArgs.Add("InstallCommandLine", $AppData.Program.InstallCommand)
             }
             if (-not([string]::IsNullOrEmpty($AppData.Program.UninstallCommand))) {
-                $Win32AppArgs.Add("UninstallCommandLine", $AppData.Program.UninstallCommand)
+                Args.Add("UninstallCommandLine", $AppData.Program.UninstallCommand)
             }
             if (-not([string]::IsNullOrEmpty($AppData.Program.AllowAvailableUninstall))) {
                 if ($AppData.Program.AllowAvailableUninstall -eq $true) {
-                    $Win32AppArgs.Add("AllowAvailableUninstall", $true)
+                    Args.Add("AllowAvailableUninstall", $true)
                 }
             }
             if (-not([string]::IsNullOrEmpty($AppData.Information.ScopeTagName))) {
-                $Win32AppArgs.Add("ScopeTagName", $AppData.Information.ScopeTagName)
+                Args.Add("ScopeTagName", $AppData.Information.ScopeTagName)
             }
 
             try {
                 # Create Win32 app
                 Write-Output -InputObject "Creating Win32 application"
-                Write-Output -InputObject $Win32AppArgs
-                $Win32App = Add-IntuneWin32App @Win32AppArgs
+                Write-Output -InputObject Args
+                 = Add-IntuneWin32App @Win32AppArgs
                 
                 <#try {
-                    $Win32App = Add-IntuneWin32App @Win32AppArgs
+                     = Add-IntuneWin32App @Win32AppArgs
                 }
                 catch {
                     Write-Warning "App created but date parsing failed — this is safe on new tenants."
@@ -662,6 +662,7 @@ if (-not (Test-Path $IntuneAppPackage.Path)) {
                         "AppSetupFileName" = $App.AppSetupFileName
                         "AppPublishPackageFolder" = $OutputFolder
                         "AppPublishPackageFileName" = $IntuneAppPackage.FileName
+                        #"AppPublishPackageFileName" = $IntuneAppPackage.FileName
                     }
 
                     # Add to list of applications to be assigned
