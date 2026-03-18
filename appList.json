@@ -1,1 +1,17 @@
-
+{
+    "Apps": [
+        {
+            "IntuneAppName": "7zip",
+            "IntuneAppNamingConvention": "PublisherAppNameAppVersion",
+            "AppPublisher": "Igor Pavlov",
+            "AppSource": "Evergreen",
+            "AppID": "7zip",
+            "AppFolderName": "7zip",
+            "FilterOptions": [
+                {
+                    "Architecture": "x64",
+                    "Type": "msi"
+                }
+            ]
+        }
+  }
