@@ -614,7 +614,15 @@ Process {
                 # Create Win32 app
                 Write-Output -InputObject "Creating Win32 application"
                 Write-Output -InputObject $Win32AppArgs
-                $Win32App = Add-IntuneWin32App @Win32AppArgs
+                $Win32App = Add-IntuneWin32App @Win32AppArgs -ErrorAction Continue
+                
+                <#try {
+                    $Win32App = Add-IntuneWin32App @Win32AppArgs
+                }
+                catch {
+                    Write-Warning "App created but date parsing failed — this is safe on new tenants."
+                }
+                #>
 
                 try {
                     # Send Log Analytics payload with published app details
