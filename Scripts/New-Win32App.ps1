@@ -614,15 +614,15 @@ if (-not (Test-Path $IntuneAppPackage.Path)) {
                 $Win32AppArgs.Add("InstallCommandLine", $AppData.Program.InstallCommand)
             }
             if (-not([string]::IsNullOrEmpty($AppData.Program.UninstallCommand))) {
-                Args.Add("UninstallCommandLine", $AppData.Program.UninstallCommand)
+                $Win32AppArgs.Add("UninstallCommandLine", $AppData.Program.UninstallCommand)
             }
             if (-not([string]::IsNullOrEmpty($AppData.Program.AllowAvailableUninstall))) {
                 if ($AppData.Program.AllowAvailableUninstall -eq $true) {
-                    Args.Add("AllowAvailableUninstall", $true)
+                    $Win32AppArgs.Add("AllowAvailableUninstall", $true)
                 }
             }
             if (-not([string]::IsNullOrEmpty($AppData.Information.ScopeTagName))) {
-                Args.Add("ScopeTagName", $AppData.Information.ScopeTagName)
+                $Win32AppArgs.Add("ScopeTagName", $AppData.Information.ScopeTagName)
             }
 
             try {
