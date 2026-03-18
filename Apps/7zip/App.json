@@ -48,7 +48,7 @@
             "UseLocalTime": true,
             "FilterName": "",
             "FilterMode": "",
-            "AvailableTime": "",
+            "AvailableTime": "2026-03-19T09:00:00",
             "DeadlineTime": "",
             "DeliveryOptimizationPriority": "",
             "EnableRestartGracePeriod": "",
