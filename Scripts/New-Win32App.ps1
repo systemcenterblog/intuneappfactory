@@ -673,6 +673,7 @@ if (-not (Test-Path $IntuneAppPackage.Path)) {
             }
             catch [System.Exception] {
                 Write-Output -InputObject "Failed to publish Win32 application. Error: $($_.Exception.Message)"
+                Write-Output -InputObject "[APPLICATION: $($IntuneAppPackage.Path)] - Path"
             }
 
             # Handle current application output completed message
