@@ -45,7 +45,7 @@
             "GroupName": "AllDevices",
             "Intent": "available",
             "Notification": "showAll",
-            "UseLocalTime": true,
+            "UseLocalTime": false,
             "FilterName": "",
             "FilterMode": "",
             "AvailableTime": "2026-03-19T09:00:00",
