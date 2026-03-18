@@ -180,6 +180,21 @@ Process {
             Write-Output -InputObject "Creating .intunewin package file from source folder"
             $IntuneAppPackage = New-IntuneWin32AppPackage -SourceFolder $SourceFolder -SetupFile $AppData.PackageInformation.SetupFile -OutputFolder $OutputFolder
 
+# --- FIX: Wait for .intunewin file to actually exist ---
+$maxWait = 15
+$waited  = 0
+
+while (-not (Test-Path $IntuneAppPackage.Path) -and $waited -lt $maxWait) {
+    Write-Output "Waiting for .intunewin package to appear..."
+    Start-Sleep -Seconds 1
+    $waited++
+}
+
+if (-not (Test-Path $IntuneAppPackage.Path)) {
+    Write-Output -InputObject "The .intunewin file '$($IntuneAppPackage.Path)' does not exist even after waiting $maxWait seconds."
+}
+# --------------------------------------------------------
+
             # Create default requirement rule
             Write-Output -InputObject "Creating default requirement rule"
             $RequirementRule = New-IntuneWin32AppRequirementRule -Architecture $AppData.RequirementRule.Architecture -MinimumSupportedWindowsRelease $AppData.RequirementRule.MinimumSupportedWindowsRelease
