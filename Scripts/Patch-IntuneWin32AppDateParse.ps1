@@ -1,7 +1,5 @@
 #Requires -RunAsAdministrator
 
-#Requires -RunAsAdministrator
-
 <#
     This script updates IntuneWin32App module files by locating the existing
     $ExpiresOnUTC DateTimeOffset parsing logic, commenting it out, and replacing
